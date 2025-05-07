@@ -27,8 +27,8 @@ async function uploadImage() {
   formData.append('file', file);
 
   try {
-    const url = import.meta.env.VITE_CP_API_GATEWAY_URL;
-    const response = await fetch(url + "/upload/", {
+    const apiURL = import.meta.env.VITE_CP_API_GATEWAY_URL;
+    const response = await fetch(`${apiURL}/upload`, {
       method: 'POST',
       body: formData,
     });
