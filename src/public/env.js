@@ -1,3 +1,0 @@
-window.__ENV__ = {
-  VITE_CP_API_GATEWAY_URL: '$VITE_CP_API_GATEWAY_URL',
-};
