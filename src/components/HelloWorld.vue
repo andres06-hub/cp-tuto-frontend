@@ -19,7 +19,7 @@ function previewOriginal() {
 async function uploadImage() {
   const file = fileInput.value?.files[0];
   if (!file) {
-    alert('Selecciona una imagen primero');
+    alert('Select an image first');
     return;
   }
 
@@ -36,7 +36,7 @@ async function uploadImage() {
 
     if (!response.ok) {
       console.error(`Error: ${response.statusText}`);
-      alert('Error al procesar la imagen. Intenta nuevamente.');
+      alert('Error processing the image. Please try again.');
       return;
     }
 
@@ -45,7 +45,7 @@ async function uploadImage() {
     previewContainer.value = true;
   } catch (error) {
     console.error('Error al subir la imagen:', error);
-    alert('Error al procesar la imagen. Intenta nuevamente.');
+    alert('Error processing the image. Please try again');
   }
 }
 </script>
@@ -110,18 +110,18 @@ async function uploadImage() {
         </defs>
       </svg>
     </div>
-    <h1>Sube tu imagen para aplicar escala de grises</h1>
+    <h1>Upload your image to apply grayscale</h1>
     <input type="file" ref="fileInput" accept="image/*" @change="previewOriginal" />
-    <button @click="uploadImage">Procesar Imagen</button>
+    <button @click="uploadImage">Image Processing</button>
 
     <div v-if="previewContainer" class="images-preview">
       <div>
         <p>Original</p>
-        <img :src="originalImage" alt="Imagen original" />
+        <img :src="originalImage" alt="image original" />
       </div>
       <div>
-        <p>Modificada</p>
-        <img :src="outputImage" alt="Imagen modificada" />
+        <p>Modified</p>
+        <img :src="outputImage" alt="Image Modified" />
       </div>
     </div>
   </div>
